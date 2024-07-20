@@ -5,9 +5,7 @@
     <link rel="stylesheet" href="css/main.css">
     <script>
         function calculateVAT() {
-            let p = document.getElementById("grossPrice").value;
-            console.log("Gross Price", p);
-            let grossPrice = parseFloat(p);
+            let grossPrice = parseFloat(document.getElementById("grossPrice").value);
             let vatRate = 0.07;
             let vatAmount = grossPrice * vatRate;
             document.getElementById("vatAmount").textContent = vatAmount.toFixed(2);
