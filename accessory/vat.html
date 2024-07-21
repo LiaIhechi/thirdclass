@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VAT Calculator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <script>
         function calculateVAT() {
@@ -22,31 +25,39 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <header class="bg-dark text-white text-center py-3 mb-4">
             <h1>VAT Calculator</h1>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
+                <a href="index.html" class="text-white mx-2">Home</a>
+                <a href="about.html" class="text-white mx-2">About</a>
             </nav>
         </header>
-        <section class="vat-section">
-            <label for="grossPrice">Gross Price:</label>
-            <input type="number" id="grossPrice" step="0.01" min="0" placeholder="Enter Gross Price">
-            <button onclick="calculateVAT()">Calculate VAT</button>
-            <div class="vat-result">
-                <p>Given VAT is 7%</p>
-                <table>
-                    <tr>
-                        <td>VAT:</td>
-                        <td><span id="vatAmount"></span></td>
-                    </tr>
-                    <tr>
-                        <td>Net Price:</td>
-                        <td><span id="netPrice"></span></td>
-                    </tr>
-                </table>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="form-group">
+                    <label for="grossPrice">Gross Price:</label>
+                    <input type="number" id="grossPrice" class="form-control" step="0.01" min="0" placeholder="Enter Gross Price">
+                </div>
+                <button onclick="calculateVAT()" class="btn btn-primary mb-3">Calculate VAT</button>
+                <div class="vat-result">
+                    <p>Given VAT is 7%</p>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>VAT:</td>
+                            <td><span id="vatAmount"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Net Price:</td>
+                            <td><span id="netPrice"></span></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-        </section>
+        </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
