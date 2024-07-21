@@ -1,121 +1,57 @@
-/* main.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-header {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    border-radius: 10px 10px 0 0;
-}
-
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
-
-.form-section {
-    margin: 20px 0;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input, select, button {
-    margin-bottom: 10px;
-    padding: 8px;
-    width: calc(100% - 16px);
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-between;
-}
-
-.buttons button {
-    width: 48%;
-}
-
-.product-list-section {
-    margin: 20px 0;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #f4f4f4;
-}
-
-.total {
-    text-align: right;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-.vat-section {
-    margin: 20px 0;
-}
-
-.vat-result {
-    margin-top: 10px;
-}
-
-.timeline {
-    padding-left: 15px;
-    border-left: 2px solid #ddd;
-}
-
-.timeline-item {
-    margin-bottom: 20px;
-}
-
-.timeline-item h5 {
-    margin-bottom: 5px;
-    font-size: 1.2em;
-}
-
-.timeline-item p {
-    margin-bottom: 0;
-    color: #555;
-}
-
-@media (max-width: 600px) {
-    .buttons button {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header class="bg-dark text-white text-center py-3 mb-4">
+            <h1>About Us</h1>
+            <nav>
+                <a href="index.html" class="text-white mx-2">Home</a>
+                <a href="vat.html" class="text-white mx-2">VAT Calculator</a>
+            </nav>
+        </header>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="profilepic-suga.jpg" class="card-img-top" alt="Profile Picture">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Laura Ajaegbu - Web Developer</h5>
+                        <p class="card-text">I am a web developer from Nigeria.</p>
+                        <a href="mailto:u6328006@au.edu" class="btn btn-primary">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Flip</h5>
+                        <p class="card-text">
+                            In publishing and graphic design, lorem ipsum is a filler text commonly used to demonstrate the graphic elements of a document or visual presentation. Replacing meaningful content that could be distracting with placeholder text may allow viewers to focus on graphic aspects such as font, typography, and page layout.
+                        </p>
+                        <p class="card-text"><small class="text-muted">2020-2022</small></p>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Microsoft</h5>
+                        <p class="card-text">
+                            In publishing and graphic design, lorem ipsum is a filler text commonly used to demonstrate the graphic elements of a document or visual presentation. Replacing meaningful content that could be distracting with placeholder text may allow viewers to focus on graphic aspects such as font, typography, and page layout.
+                        </p>
+                        <p class="card-text"><small class="text-muted">2010-2020</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
 
