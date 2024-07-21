@@ -1,46 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Accessories</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div class="container">
-        <header>
+        <header class="bg-dark text-white text-center py-3 mb-4">
             <h1>Car Accessories</h1>
             <nav>
-                <a href="about.html">About</a>
-                <a href="vat.html">VAT Calculator</a>
+                <a href="about.html" class="text-white mx-2">About</a>
+                <a href="vat.html" class="text-white mx-2">VAT Calculator</a>
             </nav>
         </header>
-        <section class="form-section">
-            <form id="accessoryForm">
-                <label for="accessory">Select an accessory:</label>
-                <select id="accessory" name="accessory">
-                    <option value="Car Cover">Car Cover - $50</option>
-                    <option value="Seat Covers">Seat Covers - $30</option>
-                    <option value="Floor Mats">Floor Mats - $20</option>
-                    <option value="Door Visors">Door Visors - $40</option>
-                </select>
-                <label for="amount">Amount:</label>
-                <input type="number" id="amount" name="amount" min="1" value="1">
-                <div class="buttons">
-                    <button type="button" onclick="addToProductList()">Add</button>
-                    <button type="button" onclick="clearProductList()">Clear List</button>
-                </div>
-            </form>
-        </section>
-        <section class="product-list-section">
-            <h2>Product List</h2>
-            <table id="productList">
-                <tr>
-                    <th>Accessory</th>
-                    <th>Amount</th>
-                    <th>Price</th>
-                </tr>
-            </table>
-            <p class="total">Total Price: $<span id="totalPrice">0</span></p>
-        </section>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="accessoryForm">
+                    <div class="form-group">
+                        <label for="accessory">Select an accessory:</label>
+                        <select id="accessory" name="accessory" class="form-control">
+                            <option value="Car Cover">Car Cover - $50</option>
+                            <option value="Seat Covers">Seat Covers - $30</option>
+                            <option value="Floor Mats">Floor Mats - $20</option>
+                            <option value="Door Visors">Door Visors - $40</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" name="amount" min="1" value="1" class="form-control">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="addToProductList()">Add</button>
+                    <button type="button" class="btn btn-danger" onclick="clearProductList()">Clear List</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2>Product List</h2>
+                <table id="productList" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Accessory</th>
+                            <th>Amount</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Product list items will be added here -->
+                    </tbody>
+                </table>
+                <p class="total font-weight-bold text-right">Total Price: $<span id="totalPrice">0</span></p>
+            </div>
+        </div>
     </div>
     <script>
         var totalPrice = 0;
@@ -51,7 +63,7 @@
             var accessoryName = accessorySelect.options[accessorySelect.selectedIndex].text.split(" - $")[0];
             var amount = document.getElementById("amount").value;
             var price = calculatePrice(accessory) * amount;
-            var table = document.getElementById("productList");
+            var table = document.getElementById("productList").getElementsByTagName('tbody')[0];
             var row = table.insertRow(-1);
             var accessoryCell = row.insertCell(0);
             var amountCell = row.insertCell(1);
@@ -84,9 +96,9 @@
         }
 
         function clearProductList() {
-            var table = document.getElementById("productList");
+            var table = document.getElementById("productList").getElementsByTagName('tbody')[0];
             var rowCount = table.rows.length;
-            for (var i = rowCount - 1; i > 0; i--) {
+            for (var i = rowCount - 1; i >= 0; i--) {
                 table.deleteRow(i);
             }
             totalPrice = 0;
@@ -94,5 +106,8 @@
             localStorage.removeItem("totalPrice");
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
