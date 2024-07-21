@@ -5,14 +5,19 @@
     <link rel="stylesheet" href="css/main.css">
     <script>
         function calculateVAT() {
-            let p = document.getElementById("grossPrice").value;
-            console.log("Gross Price", p);
-            let grossPrice = parseFloat(p);
+            let grossPrice = parseFloat(document.getElementById("grossPrice").value);
             let vatRate = 0.07;
             let vatAmount = grossPrice * vatRate;
             document.getElementById("vatAmount").textContent = vatAmount.toFixed(2);
             document.getElementById("netPrice").textContent = (grossPrice + vatAmount).toFixed(2);
         }
+
+        function setGrossPriceFromTotal() {
+            let totalPrice = parseFloat(localStorage.getItem("totalPrice") || "0");
+            document.getElementById("grossPrice").value = totalPrice.toFixed(2);
+        }
+
+        window.onload = setGrossPriceFromTotal;
     </script>
 </head>
 <body>
