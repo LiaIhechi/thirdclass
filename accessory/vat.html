@@ -26,12 +26,28 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
     </nav>
-    <label for="grossPrice">Gross Price:</label>
-    <input type="number" id="grossPrice" step="0.01" min="0" placeholder="Enter Gross Price">
-    <button onclick="calculateVAT()">Calculate VAT</button>
-    <br>
-    <p>Given VAT is 7%</p>
-    VAT: <span id="vatAmount"></span><br>
-    Net Price: <span id="netPrice"></span>
+    <table>
+        <tr>
+            <td>
+                <label for="grossPrice">Gross Price:</label>
+                <input type="number" id="grossPrice" step="0.01" min="0" placeholder="Enter Gross Price">
+                <button onclick="calculateVAT()">Calculate VAT</button>
+            </td>
+            <td>
+                <p>Given VAT is 7%</p>
+                <table>
+                    <tr>
+                        <td>VAT:</td>
+                        <td><span id="vatAmount"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Net Price:</td>
+                        <td><span id="netPrice"></span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
+
