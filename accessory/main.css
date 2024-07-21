@@ -48,13 +48,13 @@ input, select, button {
     border: 1px solid #ccc;
 }
 
-.buttons button {
-    width: 48%;
-    margin-right: 2%;
+.buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
-.buttons button:last-child {
-    margin-right: 0;
+.buttons button {
+    width: 48%;
 }
 
 .product-list-section {
@@ -89,6 +89,25 @@ th {
 
 .vat-result {
     margin-top: 10px;
+}
+
+.timeline {
+    padding-left: 15px;
+    border-left: 2px solid #ddd;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+.timeline-item h5 {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.timeline-item p {
+    margin-bottom: 0;
+    color: #555;
 }
 
 @media (max-width: 600px) {
